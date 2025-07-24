@@ -1,0 +1,52 @@
+.git
+.env
+.DS_Store
+airflow_settings.yaml
+__pycache__/
+.astro
+.venv
+airflow-webserver.pid
+webserver_config.py
+airflow.cfg
+airflow.db
+dbt_ecommerce/seeds
+dbt_ecommerce/logs/
+dbt.log
+logs/
+
+# Logs
+logs/
+*.log
+
+# Banco local do dbt (arquivo duckdb gerado)
+dbt_ecommerce/data/*.duckdb
+
+# Pastas e arquivos gerados pelo sistema/IDE
+__pycache__/
+*.pyc
+*.pyo
+
+# Arquivos do ambiente Python
+venv/
+.env/
+*.env
+
+# Arquivos de lock (algumas vezes é bom versionar, mas uv.lock parece lock de Poetry, avalie)
+uv.lock
+
+# Pastas temporárias ou de cache do Airflow (se existir)
+airflow/__pycache__/
+airflow/logs/
+airflow/tmp/
+
+# Pasta .astro (se gerada automaticamente e não conter configs necessárias)
+.astro/
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Outputs que não fazem parte do código-fonte, nem da configuração
+target/
+dbt_ecommerce/logs/
+dbt_ecommerce/target/

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_churn_prediction_data
+    description: "Agregações para previsão de churn por cliente"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+      - name: total_orders
+        description: "Total de pedidos do cliente"
+      - name: is_churned
+        description: "Flag: 1 se churn, 0 se ativo"
+        tests:
+          - accepted_values:
+              values: [0, 1]
