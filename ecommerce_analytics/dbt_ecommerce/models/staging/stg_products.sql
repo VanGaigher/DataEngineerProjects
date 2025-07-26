@@ -9,11 +9,11 @@ WITH source AS (
 renamed AS (
     SELECT
         product_id,
-        REGEXP_REPLACE(LOWER(product_name), '\b(\w)', '\U\1') AS product_name,
+        INITCAP(LOWER(product_name)) AS product_name, -- Alteração aqui
         category,
         CAST(custo AS NUMERIC) AS cost,
         CAST(price AS NUMERIC) AS price,
-        ROUND(price - cost, 2) AS margin
+        ROUND(CAST(price - custo AS NUMERIC), 2) AS margin
     FROM source
 )
 

@@ -1,0 +1,12 @@
+dbt_ecommerce:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: host.docker.internal    # ou 127.0.0.1 se quiser
+      user: postgres
+      password: postgres
+      port: 5432
+      dbname: postgres
+      schema: public  # pode manter, só certifique que esse schema existe no seu db
+      threads: 1
